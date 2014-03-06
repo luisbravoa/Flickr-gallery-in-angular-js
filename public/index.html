@@ -1,0 +1,20 @@
+<html ng-app="flickr">
+<head>
+    <title>Demo</title>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-resource.min.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+    <script src="js/services.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/controllers/app.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="container" ng-controller="FlickrCtrl">
+        <div ng-view></div>
+    </div>
+</body>
+</html>

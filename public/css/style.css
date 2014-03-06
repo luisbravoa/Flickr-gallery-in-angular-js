@@ -1,0 +1,54 @@
+#flickr-container{
+    border: 1px solid #cccccc;
+    min-height: 500px;
+    padding: 0;
+    margin: 0;
+}
+.flickr-photo{
+    display: inline-block;
+    width: 75px;
+    border: 1px solid #cccccc;
+    margin: 5px;
+    height: 75px;
+    background-position: center;
+}
+#flickr-container .loader{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#flickr-container .pages{
+    text-align: center;
+}
+#flickr-container .pages .page{
+    display: inline-block;
+    margin: 5px;
+
+}
+#flickr-container .pages-of-pages{
+    margin: 5px;
+}
+
+.prev , .next {
+    position: absolute;
+    top: 50%;
+}
+.prev{
+    left: 20;
+}
+.next{
+    right: 20;
+}
+.detailedPhoto {
+    text-align: center;
+    min-height: 400px;
+}
+/*.photoModal .modal-content{*/
+    /*width: 640px;*/
+    /*padding: 0;*/
+/*}*/
+/*.modal-header, .modal-body, .modal-footer {*/
+    /*padding: 0;*/
+/*}*/
