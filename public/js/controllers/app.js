@@ -6,10 +6,7 @@ function FlickrCtrl ($scope, $routeParams, $location, Flickr) {
     $scope.nextPhoto = null;
     $scope.currentPhotoSrc = '';
     $scope.text = '';
-    $scope.modalOpened = false;
-    $scope.setModalOpened = function(bool){
-        $scope.modalOpened = bool;
-    };
+    $scope.modalOpened = null;
     $scope.search = function(search, page){
         $scope.loading = true;
         var promise = Flickr.search(search, page);
@@ -27,9 +24,10 @@ function FlickrCtrl ($scope, $routeParams, $location, Flickr) {
             $scope.loading = false;
         });
     }
-    $scope.go = function(path){
-//        window.location = path;
-        $location.path( path );
+    $scope.selectPhoto = function(id){
+        $('.photoModal').modal('hide');
+        console.log('redirect: ' + id);
+        $location.path( '/' + String(id) );
     }
 
     $scope.isModalOpened = function(){
@@ -67,13 +65,16 @@ function FlickrCtrl ($scope, $routeParams, $location, Flickr) {
 
     $scope.openModal = function(){
         var self = this;
-        if($('.photoModal').hasClass('in')) return;
+        $('.photoModal').modal('show');
+        if($scope.modalOpened) return;
+
+
         $('.photoModal').modal('show');
         $('.photoModal').on('hide.bs.modal', function (e) {
-            console.log('unbind');
-            $(document).unbind('keydown');
-            $scope.go('/');
+            $scope.modalOpened = false;
+            $location.path('/');
         });
+        $scope.modalOpened = true;
     },
 
     $scope.setCurrentPhoto = function(id){

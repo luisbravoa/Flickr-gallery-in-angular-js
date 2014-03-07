@@ -23,7 +23,7 @@
     <div ng-hide="loading" class="flickr-photo" ng-repeat="photo in photos"><a ng-href="#/{{photo.id}}"><img ng-src="http://farm{{photo.farm}}.static.flickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_s.jpg"></a></div>
 </div>
 
-<div class="modal fade photoModal" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal photoModal" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content" ng-show="currentPhoto">
             <div class="modal-header">
@@ -32,38 +32,15 @@
             </div>
             <div class="modal-body">
             <div class="prev">
-                <a href="" ng-href="#/{{prevPhoto.id}}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a href="" ng-click="selectPhoto(prevPhoto.id)" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-chevron-left"></span></a>
                 </div>
                 <div class="detailedPhoto">
                     <img ng-src="{{currentPhotoSrc}}">
                 </div>
                 <div class="next">
-                    <a href="" ng-click="setCurrentPhoto(nextPhoto.id)" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <a href="" ng-click="selectPhoto(nextPhoto.id)" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-chevron-right"></span></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!--'<div class="modal-header">' +-->
-    <!--'<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +-->
-    <!--'<h4 class="modal-title">{{current.title}}</h4>' +-->
-    <!--'</div>' +-->
-<!--'<div class="modal-body">' +-->
-    <!--'<div class="prev">' +-->
-        <!--'{{#if prev}}' +-->
-        <!--'<a href="#photo/{{prev.id}}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-chevron-left"></span></a>' +-->
-        <!--'{{/if}}' +-->
-        <!--'</div>' +-->
-    <!--'<div class="detailedPhoto">' +-->
-        <!--'<a href="{{current.url}}" target="_blank"><img src="{{current.src}}"></a>' +-->
-        <!--'</div>' +-->
-    <!--'<div class="next">' +-->
-        <!--'{{#if next}}' +-->
-        <!--'<a href="#photo/{{next.id}}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-chevron-right"></span></a>' +-->
-        <!--'{{/if}}' +-->
-        <!--'</div>' +-->
-    <!--'</div>' +-->
-<!--'<div class="modal-footer">' +-->
-    <!--'<p>One fine body&hellip;</p>' +-->
-    <!--'</div>'-->
