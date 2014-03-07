@@ -1,7 +1,7 @@
 angular.module('flickr', ['ngRoute', 'flickrServices'])
-    .config(airlineRouter);
+    .config(flickrRouter);
 
-function airlineRouter($routeProvider){
+function flickrRouter($routeProvider){
     $routeProvider
         .when('/', {
             templateUrl: 'partials/main.html',
