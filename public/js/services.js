@@ -3,7 +3,7 @@ angular.module('flickrServices',['ngResource'])
         var self = this;
         self.perPage =  150;
         self.api_key = "8e8b0a8d39a7af07485e7b992084a350";
-        self.base_url= "http://api.flickr.com/services/rest/";
+        self.base_url= "https://api.flickr.com/services/rest/";
 
         self.search = function(search, page){
             var deferred = $q.defer();
